@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
+<html lang="it"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="manifest" id="pwa-manifest">
@@ -10,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#020b18">
 <title>🎳 Torneo Bowling Merate — Classifica</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Rajdhani:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   :root {
     --neon-cyan: #00f5ff;
@@ -2022,14 +2021,9 @@ function importExcel(event) {
 </script>
 
 </head>
-<body>
+<body style="">
 <!-- ADMIN BUTTON -->
-<button class="admin-btn" id="adminBtn" onclick="handleAdminClick()">
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-  </svg>
-  Admin
-</button>
+<button class="admin-btn logged" id="adminBtn" onclick="handleAdminClick()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Admin</button>
 
 <!-- LOGIN MODAL -->
 <div class="modal-overlay" id="loginModal">
@@ -2052,7 +2046,7 @@ function importExcel(event) {
 </div>
 
 <!-- ADMIN PANEL -->
-<div class="admin-panel" id="adminPanel">
+<div class="admin-panel visible" id="adminPanel">
   <h3>🛡️ Amministratore</h3>
   <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
     <span style="font-size:13px; color:#b0d4e8;">Connesso come</span>
@@ -2118,21 +2112,45 @@ function importExcel(event) {
   <div class="admin-section-title">📊 Statistiche Torneo</div>
   <div class="admin-info-row"><span>Giocatori iscritti</span><span id="adm-players">36 / 36</span></div>
   <div class="admin-info-row"><span>Giornate disputate</span><span id="adm-rounds">4</span></div>
-  <div class="admin-info-row"><span>Punteggio massimo</span><span id="adm-maxscore"></span></div>
-  <div class="admin-info-row"><span>Punteggio minimo</span><span id="adm-minscore"></span></div>
-  <div class="admin-info-row"><span>Media punteggi</span><span id="adm-avgscore"></span></div>
+  <div class="admin-info-row"><span>Punteggio massimo</span><span id="adm-maxscore">3308</span></div>
+  <div class="admin-info-row"><span>Punteggio minimo</span><span id="adm-minscore">1536</span></div>
+  <div class="admin-info-row"><span>Media punteggi</span><span id="adm-avgscore">2586</span></div>
 
   <div class="admin-section-title">🏆 Classifica Squadre</div>
-  <div id="adm-squad-list"></div>
+  <div id="adm-squad-list">
+    <div class="admin-info-row">
+      <span>🥇 Cobra</span>
+      <span>39.230</span>
+    </div>
+    <div class="admin-info-row">
+      <span>🥈 Silver Horse</span>
+      <span>19.568</span>
+    </div>
+    <div class="admin-info-row">
+      <span>🥉 Phoenix</span>
+      <span>17.850</span>
+    </div>
+    <div class="admin-info-row">
+      <span>4° Lions</span>
+      <span>11.892</span>
+    </div>
+    <div class="admin-info-row">
+      <span>5° Insubria</span>
+      <span>2287</span>
+    </div>
+    <div class="admin-info-row">
+      <span> Pegaso</span>
+      <span>2260</span>
+    </div></div>
 
   <div class="admin-section-title">📁 Gestione Dati</div>
 
   <input type="file" id="importFileInput" accept=".xlsx" onchange="importExcel(event)">
   <button class="admin-action-btn" onclick="document.getElementById('importFileInput').click()">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-      <polyline points="17 8 12 3 7 8"/>
-      <line x1="12" y1="3" x2="12" y2="15"/>
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+      <polyline points="17 8 12 3 7 8"></polyline>
+      <line x1="12" y1="3" x2="12" y2="15"></line>
     </svg>
     Importa Excel
   </button>
@@ -2140,9 +2158,9 @@ function importExcel(event) {
 
   <button class="admin-action-btn export-btn" onclick="exportExcel()" title="Genera Excel con formattazione completa tramite Python/Pyodide (richiede connessione internet al primo utilizzo)">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-      <polyline points="7 10 12 15 17 10"/>
-      <line x1="12" y1="15" x2="12" y2="3"/>
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+      <polyline points="7 10 12 15 17 10"></polyline>
+      <line x1="12" y1="15" x2="12" y2="3"></line>
     </svg>
     Esporta Excel
   </button>
@@ -2167,25 +2185,24 @@ function importExcel(event) {
   </div>
   <div class="admin-edit-field">
     <label>Personal Access Token
-      <a href="https://github.com/settings/tokens/new?scopes=repo&description=BowlingApp" target="_blank"
-         style="color:var(--neon-cyan);font-size:9px;margin-left:6px;text-decoration:none;">
+      <a href="https://github.com/settings/tokens/new?scopes=repo&amp;description=BowlingApp" target="_blank" style="color:var(--neon-cyan);font-size:9px;margin-left:6px;text-decoration:none;">
         ➜ Genera token
       </a>
     </label>
     <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
   </div>
-  <button class="admin-apply-btn" onclick="publishToGitHub()" id="gh-publish-btn">
+  <button class="admin-apply-btn" onclick="publishToGitHub()" id="gh-publish-btn" disabled="">
     🚀 Pubblica modifiche
   </button>
-  <div id="gh-feedback" style="font-size:11px;margin-top:6px;letter-spacing:1px;min-height:16px;"></div>
+  <div id="gh-feedback" style="font-size: 11px; margin-top: 6px; letter-spacing: 1px; min-height: 16px; color: var(--neon-cyan);">⏳ Preparazione contenuto...</div>
 
 </div>
 
 <!-- SETTINGS BUTTON -->
 <button class="settings-btn" id="settingsBtn" onclick="toggleSettings()">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="3"/>
-    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    <circle cx="12" cy="12" r="3"></circle>
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
   </svg>
   Impostazioni
 </button>
@@ -2200,7 +2217,7 @@ function importExcel(event) {
       <small>Top 3 in evidenza</small>
     </div>
     <label class="toggle">
-      <input type="checkbox" id="tog-podium" checked onchange="applySettings()">
+      <input type="checkbox" id="tog-podium" checked="" onchange="applySettings()">
       <span class="toggle-slider"></span>
     </label>
   </div>
@@ -2265,7 +2282,7 @@ function importExcel(event) {
   <!-- HEADER -->
   <div class="header">
     <span class="header-pin">🎳</span>
-    <h1>Torneo Bowling<br>Merate</h1>
+    <h1>Torneo Bowling<br>Merate 2026</h1>
     <div class="header-sub">Classifica Ufficiale</div>
   </div>
 
@@ -2278,7 +2295,7 @@ function importExcel(event) {
       <span class="lbl">Giocatori</span>
     </div>
     <div class="stat-chip">
-      <span class="val" id="stat-top">3.308</span>
+      <span class="val" id="stat-top">3308</span>
       <span class="lbl">Punteggio Max</span>
     </div>
     <div class="stat-chip">
@@ -2294,7 +2311,31 @@ function importExcel(event) {
   <!-- PODIUM -->
   <div class="podium-section">
     <div class="section-label">◈ — Podio — ◈</div>
-    <div class="podium" id="podium"></div>
+    <div class="podium" id="podium"><div class="podium-card podium-1">
+      <span class="podium-medal">🥇</span>
+      <div class="podium-rank">1°</div>
+      <div class="podium-name">Redaelli Roberto</div>
+      <div class="podium-squad">Phoenix</div>
+      <div class="podium-score">3308</div>
+      <div class="podium-score-label">Totale HDP</div>
+      <span class="podium-cat">M/B</span>
+    </div><div class="podium-card podium-2">
+      <span class="podium-medal">🥈</span>
+      <div class="podium-rank">2°</div>
+      <div class="podium-name">Naimoli Fabrizio</div>
+      <div class="podium-squad">Phoenix</div>
+      <div class="podium-score">3292</div>
+      <div class="podium-score-label">Totale HDP</div>
+      <span class="podium-cat">M/A</span>
+    </div><div class="podium-card podium-3">
+      <span class="podium-medal">🥉</span>
+      <div class="podium-rank">3°</div>
+      <div class="podium-name">Dennis Labasan</div>
+      <div class="podium-squad">Cobra</div>
+      <div class="podium-score">3269</div>
+      <div class="podium-score-label">Totale HDP</div>
+      <span class="podium-cat">M/A</span>
+    </div></div>
   </div>
 
   <div class="neon-line"></div>
@@ -2328,7 +2369,439 @@ function importExcel(event) {
             <th class="center">TOT. HDP</th>
           </tr>
         </thead>
-        <tbody id="tableBody"></tbody>
+        <tbody id="tableBody"><tr data-idx="0">
+      <td class="pos-cell pos-top3">1</td>
+      <td class="name-cell">Redaelli Roberto<button class="detail-btn" onclick="openPlayerModal(0)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mb">M/B</span></td>
+      <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
+      <td class="hdp-cell col-hide">+5</td>
+      <td class="score-cell center">790</td>
+      <td class="score-cell center">851</td>
+      <td class="score-cell center">826</td>
+      <td class="score-cell center">821</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-1 total-cell">3308</td>
+    </tr><tr data-idx="1">
+      <td class="pos-cell pos-top3">2</td>
+      <td class="name-cell">Naimoli Fabrizio<button class="detail-btn" onclick="openPlayerModal(1)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
+      <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
+      <td class="hdp-cell col-hide">—</td>
+      <td class="score-cell center">851</td>
+      <td class="score-cell center">917</td>
+      <td class="score-cell center">749</td>
+      <td class="score-cell center">775</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-2 total-cell">3292</td>
+    </tr><tr data-idx="2">
+      <td class="pos-cell pos-top3">3</td>
+      <td class="name-cell">Dennis Labasan<button class="detail-btn" onclick="openPlayerModal(2)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">—</td>
+      <td class="score-cell center">827</td>
+      <td class="score-cell center">845</td>
+      <td class="score-cell center">715</td>
+      <td class="score-cell center">882</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-3 total-cell">3269</td>
+    </tr><tr data-idx="3">
+      <td class="pos-cell pos-top10">4</td>
+      <td class="name-cell">Paul Russel Es<button class="detail-btn" onclick="openPlayerModal(3)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">868</td>
+      <td class="score-cell center">921</td>
+      <td class="score-cell center">723</td>
+      <td class="score-cell center">722</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-top10 total-cell">3234</td>
+    </tr><tr data-idx="4">
+      <td class="pos-cell pos-top10">5</td>
+      <td class="name-cell">Brunati Luigi<button class="detail-btn" onclick="openPlayerModal(4)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">892</td>
+      <td class="score-cell center">663</td>
+      <td class="score-cell center">711</td>
+      <td class="score-cell center">811</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-top10 total-cell">3117</td>
+    </tr><tr data-idx="5">
+      <td class="pos-cell pos-top10">6</td>
+      <td class="name-cell">De Castro Ronaldo<button class="detail-btn" onclick="openPlayerModal(5)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">808</td>
+      <td class="score-cell center">871</td>
+      <td class="score-cell center">696</td>
+      <td class="score-cell center">740</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-top10 total-cell">3115</td>
+    </tr><tr data-idx="6">
+      <td class="pos-cell pos-top10">7</td>
+      <td class="name-cell">De Castro Aileen<button class="detail-btn" onclick="openPlayerModal(6)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-fd">F/D</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+30</td>
+      <td class="score-cell center">777</td>
+      <td class="score-cell center">715</td>
+      <td class="score-cell center">716</td>
+      <td class="score-cell center">762</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-top10 total-cell">3090</td>
+    </tr><tr data-idx="7">
+      <td class="pos-cell pos-top10">8</td>
+      <td class="name-cell">Radice Mario<button class="detail-btn" onclick="openPlayerModal(7)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">729</td>
+      <td class="score-cell center">748</td>
+      <td class="score-cell center">791</td>
+      <td class="score-cell center">758</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-top10 total-cell">3066</td>
+    </tr><tr data-idx="8">
+      <td class="pos-cell pos-top10">9</td>
+      <td class="name-cell">Moscardi Antonio<button class="detail-btn" onclick="openPlayerModal(8)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">814</td>
+      <td class="score-cell center">759</td>
+      <td class="score-cell center">688</td>
+      <td class="score-cell center">721</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-top10 total-cell">3022</td>
+    </tr><tr data-idx="9">
+      <td class="pos-cell pos-top10">10</td>
+      <td class="name-cell">Maroni Michela<button class="detail-btn" onclick="openPlayerModal(9)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-fd">F/D</span></td>
+      <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
+      <td class="hdp-cell col-hide">+30</td>
+      <td class="score-cell center">679</td>
+      <td class="score-cell center">784</td>
+      <td class="score-cell center">703</td>
+      <td class="score-cell center">653</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-top10 total-cell">2939</td>
+    </tr><tr data-idx="10">
+      <td class="pos-cell pos-rest">11</td>
+      <td class="name-cell">Ditommaso Davide<button class="detail-btn" onclick="openPlayerModal(10)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">658</td>
+      <td class="score-cell center">782</td>
+      <td class="score-cell center">719</td>
+      <td class="score-cell center">736</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2935</td>
+    </tr><tr data-idx="11">
+      <td class="pos-cell pos-rest">12</td>
+      <td class="name-cell">Reduzzi Stefania<button class="detail-btn" onclick="openPlayerModal(11)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-fb">F/B</span></td>
+      <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
+      <td class="hdp-cell col-hide">+20</td>
+      <td class="score-cell center">743</td>
+      <td class="score-cell center">693</td>
+      <td class="score-cell center">733</td>
+      <td class="score-cell center">657</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2906</td>
+    </tr><tr data-idx="12">
+      <td class="pos-cell pos-rest">13</td>
+      <td class="name-cell">Presta Antonio<button class="detail-btn" onclick="openPlayerModal(12)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">706</td>
+      <td class="score-cell center">742</td>
+      <td class="score-cell center">645</td>
+      <td class="score-cell center">742</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2875</td>
+    </tr><tr data-idx="13">
+      <td class="pos-cell pos-rest">14</td>
+      <td class="name-cell">De Meo Mchele<button class="detail-btn" onclick="openPlayerModal(13)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-other">M/eso</span></td>
+      <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
+      <td class="hdp-cell col-hide">+25</td>
+      <td class="score-cell center">850</td>
+      <td class="score-cell center">858</td>
+      <td class="score-cell center">866</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2774</td>
+    </tr><tr data-idx="14">
+      <td class="pos-cell pos-rest">15</td>
+      <td class="name-cell">Galbiati Fabio<button class="detail-btn" onclick="openPlayerModal(14)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
+      <td class="center col-hide"><span class="squad-lions">Lions</span></td>
+      <td class="hdp-cell col-hide">—</td>
+      <td class="score-cell center">890</td>
+      <td class="score-cell center">857</td>
+      <td class="score-cell center">818</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2565</td>
+    </tr><tr data-idx="15">
+      <td class="pos-cell pos-rest">16</td>
+      <td class="name-cell">Precedes Cabral<button class="detail-btn" onclick="openPlayerModal(15)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-fb">F/B</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+20</td>
+      <td class="score-cell center">769</td>
+      <td class="score-cell center">825</td>
+      <td class="score-cell center">809</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2563</td>
+    </tr><tr data-idx="16">
+      <td class="pos-cell pos-rest">17</td>
+      <td class="name-cell">Erario Carlo<button class="detail-btn" onclick="openPlayerModal(16)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">—</td>
+      <td class="score-cell center">884</td>
+      <td class="score-cell center">827</td>
+      <td class="score-cell center">816</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2527</td>
+    </tr><tr data-idx="17">
+      <td class="pos-cell pos-rest">18</td>
+      <td class="name-cell">Di Mauro Duilio<button class="detail-btn" onclick="openPlayerModal(17)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">836</td>
+      <td class="score-cell center">812</td>
+      <td class="score-cell center">793</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2521</td>
+    </tr><tr data-idx="18">
+      <td class="pos-cell pos-rest">19</td>
+      <td class="name-cell">Mineo Marco<button class="detail-btn" onclick="openPlayerModal(18)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mb">M/B</span></td>
+      <td class="center col-hide"><span class="squad-lions">Lions</span></td>
+      <td class="hdp-cell col-hide">+5</td>
+      <td class="score-cell center">819</td>
+      <td class="score-cell center">793</td>
+      <td class="score-cell center">856</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2508</td>
+    </tr><tr data-idx="19">
+      <td class="pos-cell pos-rest">20</td>
+      <td class="name-cell">Cafaro Giovanni<button class="detail-btn" onclick="openPlayerModal(19)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mb">M/B</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+5</td>
+      <td class="score-cell center">811</td>
+      <td class="score-cell center">886</td>
+      <td class="score-cell center">750</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2487</td>
+    </tr><tr data-idx="20">
+      <td class="pos-cell pos-rest">21</td>
+      <td class="name-cell">Ligato Luca<button class="detail-btn" onclick="openPlayerModal(20)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/AM</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+30</td>
+      <td class="score-cell center">760</td>
+      <td class="score-cell center">727</td>
+      <td class="score-cell center">759</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2486</td>
+    </tr><tr data-idx="21">
+      <td class="pos-cell pos-rest">22</td>
+      <td class="name-cell">Zorzan Marco<button class="detail-btn" onclick="openPlayerModal(21)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
+      <td class="center col-hide"><span class="squad-lions">Lions</span></td>
+      <td class="hdp-cell col-hide">—</td>
+      <td class="score-cell center">823</td>
+      <td class="score-cell center">1017</td>
+      <td class="score-cell center">645</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2485</td>
+    </tr><tr data-idx="22">
+      <td class="pos-cell pos-rest">23</td>
+      <td class="name-cell">Galli Andrea<button class="detail-btn" onclick="openPlayerModal(22)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">784</td>
+      <td class="score-cell center">888</td>
+      <td class="score-cell center">727</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2479</td>
+    </tr><tr data-idx="23">
+      <td class="pos-cell pos-rest">24</td>
+      <td class="name-cell">Mollica MeMè<button class="detail-btn" onclick="openPlayerModal(23)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-fb">F/B</span></td>
+      <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
+      <td class="hdp-cell col-hide">+20</td>
+      <td class="score-cell center">822</td>
+      <td class="score-cell center">699</td>
+      <td class="score-cell center">789</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2470</td>
+    </tr><tr data-idx="24">
+      <td class="pos-cell pos-rest">25</td>
+      <td class="name-cell">Ligato Massimo<button class="detail-btn" onclick="openPlayerModal(24)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mb">M/B</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+5</td>
+      <td class="score-cell center">873</td>
+      <td class="score-cell center">775</td>
+      <td class="score-cell center">766</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2454</td>
+    </tr><tr data-idx="25">
+      <td class="pos-cell pos-rest">26</td>
+      <td class="name-cell">Carovana Daniela<button class="detail-btn" onclick="openPlayerModal(25)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-fc">F/C</span></td>
+      <td class="center col-hide"><span class="squad-lions">Lions</span></td>
+      <td class="hdp-cell col-hide">+25</td>
+      <td class="score-cell center">686</td>
+      <td class="score-cell center">713</td>
+      <td class="score-cell center">719</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2318</td>
+    </tr><tr data-idx="26">
+      <td class="pos-cell pos-rest">27</td>
+      <td class="name-cell">Zica Virginia<button class="detail-btn" onclick="openPlayerModal(26)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-fd">F/D</span></td>
+      <td class="center col-hide"><span class="squad-insubria">Insubria</span></td>
+      <td class="hdp-cell col-hide">+30</td>
+      <td class="score-cell center">743</td>
+      <td class="score-cell center">690</td>
+      <td class="score-cell center">614</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2287</td>
+    </tr><tr data-idx="27">
+      <td class="pos-cell pos-rest">28</td>
+      <td class="name-cell">Prvovenzi Tino<button class="detail-btn" onclick="openPlayerModal(27)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">—</td>
+      <td class="score-cell center">801</td>
+      <td class="score-cell center">733</td>
+      <td class="score-cell center">741</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2275</td>
+    </tr><tr data-idx="28">
+      <td class="pos-cell pos-rest">29</td>
+      <td class="name-cell">Esposito Gennaro<button class="detail-btn" onclick="openPlayerModal(28)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-md">M/D</span></td>
+      <td class="center col-hide"><span class="">Pegaso</span></td>
+      <td class="hdp-cell col-hide">+15</td>
+      <td class="score-cell center">757</td>
+      <td class="score-cell center">719</td>
+      <td class="score-cell center">664</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2260</td>
+    </tr><tr data-idx="29">
+      <td class="pos-cell pos-rest">30</td>
+      <td class="name-cell">Lamberti Giuseppe<button class="detail-btn" onclick="openPlayerModal(29)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">720</td>
+      <td class="score-cell center">650</td>
+      <td class="score-cell center">785</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2235</td>
+    </tr><tr data-idx="30">
+      <td class="pos-cell pos-rest">31</td>
+      <td class="name-cell">GalifI Croberto<button class="detail-btn" onclick="openPlayerModal(30)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">638</td>
+      <td class="score-cell center">713</td>
+      <td class="score-cell center">679</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2110</td>
+    </tr><tr data-idx="31">
+      <td class="pos-cell pos-rest">32</td>
+      <td class="name-cell">Fecchio Antonio<button class="detail-btn" onclick="openPlayerModal(31)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-md">M/D</span></td>
+      <td class="center col-hide"><span class="squad-lions">Lions</span></td>
+      <td class="hdp-cell col-hide">+15</td>
+      <td class="score-cell center">638</td>
+      <td class="score-cell center">646</td>
+      <td class="score-cell center">612</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2016</td>
+    </tr><tr data-idx="32">
+      <td class="pos-cell pos-rest">33</td>
+      <td class="name-cell">Ana Maria Abante<button class="detail-btn" onclick="openPlayerModal(32)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-fb">F/B</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+20</td>
+      <td class="score-cell center">730</td>
+      <td class="score-cell center">762</td>
+      <td class="score-cell center">693</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">1945</td>
+    </tr><tr data-idx="33">
+      <td class="pos-cell pos-rest">34</td>
+      <td class="name-cell">Alessandro Delcarmine<button class="detail-btn" onclick="openPlayerModal(33)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">—</td>
+      <td class="score-cell center">903</td>
+      <td class="score-cell center">976</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">1879</td>
+    </tr><tr data-idx="34">
+      <td class="pos-cell pos-rest">35</td>
+      <td class="name-cell">Ligato Andrea<button class="detail-btn" onclick="openPlayerModal(34)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">—</td>
+      <td class="score-cell center">924</td>
+      <td class="score-cell center">815</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">1739</td>
+    </tr><tr data-idx="35">
+      <td class="pos-cell pos-rest">36</td>
+      <td class="name-cell">Giuffrida Alfio<button class="detail-btn" onclick="openPlayerModal(35)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">+10</td>
+      <td class="score-cell center">707</td>
+      <td class="score-cell center">709</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">1536</td>
+    </tr></tbody>
       </table>
       </div>
     </div>
@@ -3978,7 +4451,6 @@ const players = [
     "tot_hdp": 1536
   }
 ];
-
 // Copia immutabile dei dati originali hardcoded — usata come fallback
 // per ripristinare giornate mancanti nei dati del localStorage
 const _hardcodedPlayers = players.map(p => Object.assign({}, p));
@@ -5100,16 +5572,109 @@ function buildUpdatedHtml() {
 <div class="player-modal-overlay" id="playerModalOverlay" onclick="closePlayerModal(event)">
   <div class="player-modal" id="playerModal">
     <div class="modal-header">
-      <div class="modal-rank-badge" id="modalRank"></div>
+      <div class="modal-rank-badge" id="modalRank" style="color: var(--gold);">🥇</div>
       <div class="modal-player-info">
-        <div class="modal-player-name" id="modalName"></div>
-        <div class="modal-player-meta" id="modalMeta"></div>
+        <div class="modal-player-name" id="modalName">Redaelli Roberto</div>
+        <div class="modal-player-meta" id="modalMeta">
+    <span class="cat-badge cat-b">M/B</span>
+    <span style="color:rgba(255,255,255,0.5);font-size:13px">Phoenix</span>
+    <span style="color:var(--neon-green);font-size:13px">+5 HDP</span>
+  </div>
       </div>
       <button class="modal-close" onclick="closePlayerModal()">✕</button>
     </div>
     <div class="modal-body">
-      <div class="modal-totals" id="modalTotals"></div>
-      <div id="modalGiornate"></div>
+      <div class="modal-totals" id="modalTotals">
+    <div class="modal-total-chip">
+      <div class="chip-val">4</div>
+      <div class="chip-lbl">Giornate</div>
+    </div>
+    <div class="modal-total-chip">
+      <div class="chip-val">3208</div>
+      <div class="chip-lbl">Tot. Scratch</div>
+    </div>
+    <div class="modal-total-chip">
+      <div class="chip-val">+80</div>
+      <div class="chip-lbl">Bonus HDP</div>
+    </div>
+    <div class="modal-total-chip highlight">
+      <div class="chip-val">3308</div>
+      <div class="chip-lbl">Tot. HDP</div>
+    </div>
+  </div>
+      <div id="modalGiornate"><div class="giornata-section">
+        <div class="giornata-title">1ª Giornata</div>
+        <div class="partite-grid"><div class="partita-box">
+          <div class="p-num">P1</div>
+          <div class="p-score">181</div>
+        </div><div class="partita-box">
+          <div class="p-num">P2</div>
+          <div class="p-score">190</div>
+        </div><div class="partita-box">
+          <div class="p-num">P3</div>
+          <div class="p-score">193</div>
+        </div><div class="partita-box">
+          <div class="p-num">P4</div>
+          <div class="p-score">206</div>
+        </div><div class="giornata-totale">
+          <div class="gt-lbl">Totale</div>
+          <div class="gt-val">790</div>
+        </div>
+      </div></div><div class="giornata-section">
+        <div class="giornata-title">2ª Giornata</div>
+        <div class="partite-grid"><div class="partita-box best-score">
+          <div class="p-num">P1</div>
+          <div class="p-score">246</div>
+        </div><div class="partita-box">
+          <div class="p-num">P2</div>
+          <div class="p-score">203</div>
+        </div><div class="partita-box">
+          <div class="p-num">P3</div>
+          <div class="p-score">200</div>
+        </div><div class="partita-box">
+          <div class="p-num">P4</div>
+          <div class="p-score">182</div>
+        </div><div class="giornata-totale">
+          <div class="gt-lbl">Totale</div>
+          <div class="gt-val">851</div>
+        </div>
+      </div></div><div class="giornata-section">
+        <div class="giornata-title">3ª Giornata</div>
+        <div class="partite-grid"><div class="partita-box">
+          <div class="p-num">P1</div>
+          <div class="p-score">218</div>
+        </div><div class="partita-box">
+          <div class="p-num">P2</div>
+          <div class="p-score">215</div>
+        </div><div class="partita-box">
+          <div class="p-num">P3</div>
+          <div class="p-score">185</div>
+        </div><div class="partita-box">
+          <div class="p-num">P4</div>
+          <div class="p-score">188</div>
+        </div><div class="giornata-totale">
+          <div class="gt-lbl">Totale</div>
+          <div class="gt-val">826</div>
+        </div>
+      </div></div><div class="giornata-section">
+        <div class="giornata-title">4ª Giornata</div>
+        <div class="partite-grid"><div class="partita-box">
+          <div class="p-num">P1</div>
+          <div class="p-score">213</div>
+        </div><div class="partita-box">
+          <div class="p-num">P2</div>
+          <div class="p-score">181</div>
+        </div><div class="partita-box">
+          <div class="p-num">P3</div>
+          <div class="p-score">217</div>
+        </div><div class="partita-box">
+          <div class="p-num">P4</div>
+          <div class="p-score">190</div>
+        </div><div class="giornata-totale">
+          <div class="gt-lbl">Totale</div>
+          <div class="gt-val">821</div>
+        </div>
+      </div></div></div>
     </div>
   </div>
 </div>
@@ -5145,5 +5710,6 @@ function buildUpdatedHtml() {
 
 
 
-</body>
-</html>
+
+
+</body></html>
