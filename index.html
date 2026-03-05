@@ -2294,7 +2294,7 @@ function importExcel(event) {
   <!-- HEADER -->
   <div class="header">
     <span class="header-pin">🎳</span>
-    <h1>Torneo Bowling<br>Merate</h1>
+    <h1>Torneo Bowling<br>Merate 2026</h1>
     <div class="header-sub">Classifica Ufficiale</div>
     <div class="visitors-bar" id="visitorsBar" style="display:none">
       <span class="visitors-dot"></span>
@@ -4016,6 +4016,7 @@ const players = [
   }
 ];
 
+
 // Copia immutabile dei dati originali hardcoded — usata come fallback
 // per ripristinare giornate mancanti nei dati del localStorage
 const _hardcodedPlayers = players.map(p => Object.assign({}, p));
@@ -4856,7 +4857,7 @@ document.addEventListener('keydown', e => {
 
 // ── PERSISTENZA LOCALE ──
 const STORAGE_KEY = 'bowling_merate_data';
-const DATA_VERSION = 3; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
+const DATA_VERSION = 1772748802156; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
 
 // Assicura che ogni giocatore abbia il campo giornate.
 // Se manca (dati salvati con versione precedente), cerca prima nei dati
