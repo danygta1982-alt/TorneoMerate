@@ -2021,7 +2021,7 @@ function importExcel(event) {
 </script>
 
 </head>
-<body style="">
+<body class="">
 <!-- ADMIN BUTTON -->
 <button class="admin-btn logged" id="adminBtn" onclick="handleAdminClick()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Admin</button>
 
@@ -2114,13 +2114,13 @@ function importExcel(event) {
   <div class="admin-info-row"><span>Giornate disputate</span><span id="adm-rounds">4</span></div>
   <div class="admin-info-row"><span>Punteggio massimo</span><span id="adm-maxscore">3308</span></div>
   <div class="admin-info-row"><span>Punteggio minimo</span><span id="adm-minscore">1536</span></div>
-  <div class="admin-info-row"><span>Media punteggi</span><span id="adm-avgscore">2586</span></div>
+  <div class="admin-info-row"><span>Media punteggi</span><span id="adm-avgscore">2561</span></div>
 
   <div class="admin-section-title">🏆 Classifica Squadre</div>
   <div id="adm-squad-list">
     <div class="admin-info-row">
       <span>🥇 Cobra</span>
-      <span>39.230</span>
+      <span>38.348</span>
     </div>
     <div class="admin-info-row">
       <span>🥈 Silver Horse</span>
@@ -2154,7 +2154,7 @@ function importExcel(event) {
     </svg>
     Importa Excel
   </button>
-  <div class="import-feedback" id="importFeedback"></div>
+  <div class="import-feedback success" id="importFeedback">✓ Importati 36 giocatori (RIEPILOGO PARTITE)</div>
 
   <button class="admin-action-btn export-btn" onclick="exportExcel()" title="Genera Excel con formattazione completa tramite Python/Pyodide (richiede connessione internet al primo utilizzo)">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2330,11 +2330,11 @@ function importExcel(event) {
     </div><div class="podium-card podium-3">
       <span class="podium-medal">🥉</span>
       <div class="podium-rank">3°</div>
-      <div class="podium-name">Dennis Labasan</div>
+      <div class="podium-name">Paul Russel Es</div>
       <div class="podium-squad">Cobra</div>
-      <div class="podium-score">3269</div>
+      <div class="podium-score">3234</div>
       <div class="podium-score-label">Totale HDP</div>
-      <span class="podium-cat">M/A</span>
+      <span class="podium-cat">M/C</span>
     </div></div>
   </div>
 
@@ -2395,19 +2395,7 @@ function importExcel(event) {
       <td class="total-2 total-cell">3292</td>
     </tr><tr data-idx="2">
       <td class="pos-cell pos-top3">3</td>
-      <td class="name-cell">Dennis Labasan<button class="detail-btn" onclick="openPlayerModal(2)" title="Dettaglio partite">+</button></td>
-      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
-      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
-      <td class="hdp-cell col-hide">—</td>
-      <td class="score-cell center">827</td>
-      <td class="score-cell center">845</td>
-      <td class="score-cell center">715</td>
-      <td class="score-cell center">882</td>
-      <td class="score-cell no-score center">—</td>
-      <td class="total-3 total-cell">3269</td>
-    </tr><tr data-idx="3">
-      <td class="pos-cell pos-top10">4</td>
-      <td class="name-cell">Paul Russel Es<button class="detail-btn" onclick="openPlayerModal(3)" title="Dettaglio partite">+</button></td>
+      <td class="name-cell">Paul Russel Es<button class="detail-btn" onclick="openPlayerModal(2)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
       <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
       <td class="hdp-cell col-hide">+10</td>
@@ -2416,10 +2404,10 @@ function importExcel(event) {
       <td class="score-cell center">723</td>
       <td class="score-cell center">722</td>
       <td class="score-cell no-score center">—</td>
-      <td class="total-top10 total-cell">3234</td>
-    </tr><tr data-idx="4">
-      <td class="pos-cell pos-top10">5</td>
-      <td class="name-cell">Brunati Luigi<button class="detail-btn" onclick="openPlayerModal(4)" title="Dettaglio partite">+</button></td>
+      <td class="total-3 total-cell">3234</td>
+    </tr><tr data-idx="3">
+      <td class="pos-cell pos-top10">4</td>
+      <td class="name-cell">Brunati Luigi<button class="detail-btn" onclick="openPlayerModal(3)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
       <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
       <td class="hdp-cell col-hide">+10</td>
@@ -2429,9 +2417,9 @@ function importExcel(event) {
       <td class="score-cell center">811</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-top10 total-cell">3117</td>
-    </tr><tr data-idx="5">
-      <td class="pos-cell pos-top10">6</td>
-      <td class="name-cell">De Castro Ronaldo<button class="detail-btn" onclick="openPlayerModal(5)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="4">
+      <td class="pos-cell pos-top10">5</td>
+      <td class="name-cell">De Castro Ronaldo<button class="detail-btn" onclick="openPlayerModal(4)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
       <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
       <td class="hdp-cell col-hide">+10</td>
@@ -2441,9 +2429,9 @@ function importExcel(event) {
       <td class="score-cell center">740</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-top10 total-cell">3115</td>
-    </tr><tr data-idx="6">
-      <td class="pos-cell pos-top10">7</td>
-      <td class="name-cell">De Castro Aileen<button class="detail-btn" onclick="openPlayerModal(6)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="5">
+      <td class="pos-cell pos-top10">6</td>
+      <td class="name-cell">De Castro Aileen<button class="detail-btn" onclick="openPlayerModal(5)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-fd">F/D</span></td>
       <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
       <td class="hdp-cell col-hide">+30</td>
@@ -2453,9 +2441,9 @@ function importExcel(event) {
       <td class="score-cell center">762</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-top10 total-cell">3090</td>
-    </tr><tr data-idx="7">
-      <td class="pos-cell pos-top10">8</td>
-      <td class="name-cell">Radice Mario<button class="detail-btn" onclick="openPlayerModal(7)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="6">
+      <td class="pos-cell pos-top10">7</td>
+      <td class="name-cell">Radice Mario<button class="detail-btn" onclick="openPlayerModal(6)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
       <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
       <td class="hdp-cell col-hide">+10</td>
@@ -2465,9 +2453,9 @@ function importExcel(event) {
       <td class="score-cell center">758</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-top10 total-cell">3066</td>
-    </tr><tr data-idx="8">
-      <td class="pos-cell pos-top10">9</td>
-      <td class="name-cell">Moscardi Antonio<button class="detail-btn" onclick="openPlayerModal(8)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="7">
+      <td class="pos-cell pos-top10">8</td>
+      <td class="name-cell">Moscardi Antonio<button class="detail-btn" onclick="openPlayerModal(7)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
       <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
       <td class="hdp-cell col-hide">+10</td>
@@ -2477,9 +2465,9 @@ function importExcel(event) {
       <td class="score-cell center">721</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-top10 total-cell">3022</td>
-    </tr><tr data-idx="9">
-      <td class="pos-cell pos-top10">10</td>
-      <td class="name-cell">Maroni Michela<button class="detail-btn" onclick="openPlayerModal(9)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="8">
+      <td class="pos-cell pos-top10">9</td>
+      <td class="name-cell">Maroni Michela<button class="detail-btn" onclick="openPlayerModal(8)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-fd">F/D</span></td>
       <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
       <td class="hdp-cell col-hide">+30</td>
@@ -2489,9 +2477,9 @@ function importExcel(event) {
       <td class="score-cell center">653</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-top10 total-cell">2939</td>
-    </tr><tr data-idx="10">
-      <td class="pos-cell pos-rest">11</td>
-      <td class="name-cell">Ditommaso Davide<button class="detail-btn" onclick="openPlayerModal(10)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="9">
+      <td class="pos-cell pos-top10">10</td>
+      <td class="name-cell">Ditommaso Davide<button class="detail-btn" onclick="openPlayerModal(9)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
       <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
       <td class="hdp-cell col-hide">+10</td>
@@ -2500,10 +2488,10 @@ function importExcel(event) {
       <td class="score-cell center">719</td>
       <td class="score-cell center">736</td>
       <td class="score-cell no-score center">—</td>
-      <td class="total-rest total-cell">2935</td>
-    </tr><tr data-idx="11">
-      <td class="pos-cell pos-rest">12</td>
-      <td class="name-cell">Reduzzi Stefania<button class="detail-btn" onclick="openPlayerModal(11)" title="Dettaglio partite">+</button></td>
+      <td class="total-top10 total-cell">2935</td>
+    </tr><tr data-idx="10">
+      <td class="pos-cell pos-rest">11</td>
+      <td class="name-cell">Reduzzi Stefania<button class="detail-btn" onclick="openPlayerModal(10)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-fb">F/B</span></td>
       <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
       <td class="hdp-cell col-hide">+20</td>
@@ -2513,9 +2501,9 @@ function importExcel(event) {
       <td class="score-cell center">657</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2906</td>
-    </tr><tr data-idx="12">
-      <td class="pos-cell pos-rest">13</td>
-      <td class="name-cell">Presta Antonio<button class="detail-btn" onclick="openPlayerModal(12)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="11">
+      <td class="pos-cell pos-rest">12</td>
+      <td class="name-cell">Presta Antonio<button class="detail-btn" onclick="openPlayerModal(11)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
       <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
       <td class="hdp-cell col-hide">+10</td>
@@ -2525,9 +2513,9 @@ function importExcel(event) {
       <td class="score-cell center">742</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2875</td>
-    </tr><tr data-idx="13">
-      <td class="pos-cell pos-rest">14</td>
-      <td class="name-cell">De Meo Mchele<button class="detail-btn" onclick="openPlayerModal(13)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="12">
+      <td class="pos-cell pos-rest">13</td>
+      <td class="name-cell">De Meo Mchele<button class="detail-btn" onclick="openPlayerModal(12)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-other">M/eso</span></td>
       <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
       <td class="hdp-cell col-hide">+25</td>
@@ -2537,9 +2525,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2774</td>
-    </tr><tr data-idx="14">
-      <td class="pos-cell pos-rest">15</td>
-      <td class="name-cell">Galbiati Fabio<button class="detail-btn" onclick="openPlayerModal(14)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="13">
+      <td class="pos-cell pos-rest">14</td>
+      <td class="name-cell">Galbiati Fabio<button class="detail-btn" onclick="openPlayerModal(13)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
       <td class="center col-hide"><span class="squad-lions">Lions</span></td>
       <td class="hdp-cell col-hide">—</td>
@@ -2549,9 +2537,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2565</td>
-    </tr><tr data-idx="15">
-      <td class="pos-cell pos-rest">16</td>
-      <td class="name-cell">Precedes Cabral<button class="detail-btn" onclick="openPlayerModal(15)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="14">
+      <td class="pos-cell pos-rest">15</td>
+      <td class="name-cell">Precedes Cabral<button class="detail-btn" onclick="openPlayerModal(14)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-fb">F/B</span></td>
       <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
       <td class="hdp-cell col-hide">+20</td>
@@ -2561,9 +2549,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2563</td>
-    </tr><tr data-idx="16">
-      <td class="pos-cell pos-rest">17</td>
-      <td class="name-cell">Erario Carlo<button class="detail-btn" onclick="openPlayerModal(16)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="15">
+      <td class="pos-cell pos-rest">16</td>
+      <td class="name-cell">Erario Carlo<button class="detail-btn" onclick="openPlayerModal(15)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
       <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
       <td class="hdp-cell col-hide">—</td>
@@ -2573,9 +2561,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2527</td>
-    </tr><tr data-idx="17">
-      <td class="pos-cell pos-rest">18</td>
-      <td class="name-cell">Di Mauro Duilio<button class="detail-btn" onclick="openPlayerModal(17)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="16">
+      <td class="pos-cell pos-rest">17</td>
+      <td class="name-cell">Di Mauro Duilio<button class="detail-btn" onclick="openPlayerModal(16)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
       <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
       <td class="hdp-cell col-hide">+10</td>
@@ -2585,9 +2573,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2521</td>
-    </tr><tr data-idx="18">
-      <td class="pos-cell pos-rest">19</td>
-      <td class="name-cell">Mineo Marco<button class="detail-btn" onclick="openPlayerModal(18)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="17">
+      <td class="pos-cell pos-rest">18</td>
+      <td class="name-cell">Mineo Marco<button class="detail-btn" onclick="openPlayerModal(17)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mb">M/B</span></td>
       <td class="center col-hide"><span class="squad-lions">Lions</span></td>
       <td class="hdp-cell col-hide">+5</td>
@@ -2597,9 +2585,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2508</td>
-    </tr><tr data-idx="19">
-      <td class="pos-cell pos-rest">20</td>
-      <td class="name-cell">Cafaro Giovanni<button class="detail-btn" onclick="openPlayerModal(19)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="18">
+      <td class="pos-cell pos-rest">19</td>
+      <td class="name-cell">Cafaro Giovanni<button class="detail-btn" onclick="openPlayerModal(18)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mb">M/B</span></td>
       <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
       <td class="hdp-cell col-hide">+5</td>
@@ -2609,9 +2597,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2487</td>
-    </tr><tr data-idx="20">
-      <td class="pos-cell pos-rest">21</td>
-      <td class="name-cell">Ligato Luca<button class="detail-btn" onclick="openPlayerModal(20)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="19">
+      <td class="pos-cell pos-rest">20</td>
+      <td class="name-cell">Ligato Luca<button class="detail-btn" onclick="openPlayerModal(19)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-ma">M/AM</span></td>
       <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
       <td class="hdp-cell col-hide">+30</td>
@@ -2621,9 +2609,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2486</td>
-    </tr><tr data-idx="21">
-      <td class="pos-cell pos-rest">22</td>
-      <td class="name-cell">Zorzan Marco<button class="detail-btn" onclick="openPlayerModal(21)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="20">
+      <td class="pos-cell pos-rest">21</td>
+      <td class="name-cell">Zorzan Marco<button class="detail-btn" onclick="openPlayerModal(20)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
       <td class="center col-hide"><span class="squad-lions">Lions</span></td>
       <td class="hdp-cell col-hide">—</td>
@@ -2633,9 +2621,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2485</td>
-    </tr><tr data-idx="22">
-      <td class="pos-cell pos-rest">23</td>
-      <td class="name-cell">Galli Andrea<button class="detail-btn" onclick="openPlayerModal(22)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="21">
+      <td class="pos-cell pos-rest">22</td>
+      <td class="name-cell">Galli Andrea<button class="detail-btn" onclick="openPlayerModal(21)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mc">M/C</span></td>
       <td class="center col-hide"><span class="squad-silver">Silver Horse</span></td>
       <td class="hdp-cell col-hide">+10</td>
@@ -2645,9 +2633,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2479</td>
-    </tr><tr data-idx="23">
-      <td class="pos-cell pos-rest">24</td>
-      <td class="name-cell">Mollica MeMè<button class="detail-btn" onclick="openPlayerModal(23)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="22">
+      <td class="pos-cell pos-rest">23</td>
+      <td class="name-cell">Mollica MeMè<button class="detail-btn" onclick="openPlayerModal(22)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-fb">F/B</span></td>
       <td class="center col-hide"><span class="squad-phoenix">Phoenix</span></td>
       <td class="hdp-cell col-hide">+20</td>
@@ -2657,9 +2645,9 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2470</td>
-    </tr><tr data-idx="24">
-      <td class="pos-cell pos-rest">25</td>
-      <td class="name-cell">Ligato Massimo<button class="detail-btn" onclick="openPlayerModal(24)" title="Dettaglio partite">+</button></td>
+    </tr><tr data-idx="23">
+      <td class="pos-cell pos-rest">24</td>
+      <td class="name-cell">Ligato Massimo<button class="detail-btn" onclick="openPlayerModal(23)" title="Dettaglio partite">+</button></td>
       <td class="center col-hide"><span class="cat-badge cat-mb">M/B</span></td>
       <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
       <td class="hdp-cell col-hide">+5</td>
@@ -2669,6 +2657,18 @@ function importExcel(event) {
       <td class="score-cell no-score center">—</td>
       <td class="score-cell no-score center">—</td>
       <td class="total-rest total-cell">2454</td>
+    </tr><tr data-idx="24">
+      <td class="pos-cell pos-rest">25</td>
+      <td class="name-cell">Dennis Labasan<button class="detail-btn" onclick="openPlayerModal(24)" title="Dettaglio partite">+</button></td>
+      <td class="center col-hide"><span class="cat-badge cat-ma">M/A</span></td>
+      <td class="center col-hide"><span class="squad-cobra">Cobra</span></td>
+      <td class="hdp-cell col-hide">—</td>
+      <td class="score-cell center">827</td>
+      <td class="score-cell center">845</td>
+      <td class="score-cell center">715</td>
+      <td class="score-cell center">882</td>
+      <td class="score-cell no-score center">—</td>
+      <td class="total-rest total-cell">2387</td>
     </tr><tr data-idx="25">
       <td class="pos-cell pos-rest">26</td>
       <td class="name-cell">Carovana Daniela<button class="detail-btn" onclick="openPlayerModal(25)" title="Dettaglio partite">+</button></td>
@@ -2915,58 +2915,6 @@ const players = [
     ],
     "tot_scratch": 3292,
     "tot_hdp": 3292
-  },
-  {
-    "nome": "Dennis Labasan",
-    "cat": "M/A",
-    "hdp": 0,
-    "hdp_tot": 0,
-    "squadra": "Cobra",
-    "g1": 827,
-    "g2": 845,
-    "g3": 715,
-    "g4": 882,
-    "g5": null,
-    "giornate": [
-      {
-        "p": [
-          184,
-          203,
-          191,
-          249
-        ],
-        "tot": 827
-      },
-      {
-        "p": [
-          224,
-          238,
-          202,
-          181
-        ],
-        "tot": 845
-      },
-      {
-        "p": [
-          158,
-          204,
-          159,
-          194
-        ],
-        "tot": 715
-      },
-      {
-        "p": [
-          223,
-          201,
-          256,
-          202
-        ],
-        "tot": 882
-      }
-    ],
-    "tot_scratch": 3269,
-    "tot_hdp": 3269
   },
   {
     "nome": "Paul Russel Es",
@@ -4003,6 +3951,58 @@ const players = [
     ],
     "tot_scratch": 2354,
     "tot_hdp": 2454
+  },
+  {
+    "nome": "Dennis Labasan",
+    "cat": "M/A",
+    "hdp": 0,
+    "hdp_tot": 0,
+    "squadra": "Cobra",
+    "g1": 827,
+    "g2": 845,
+    "g3": 715,
+    "g4": 882,
+    "g5": null,
+    "giornate": [
+      {
+        "p": [
+          184,
+          203,
+          191,
+          249
+        ],
+        "tot": 827
+      },
+      {
+        "p": [
+          224,
+          238,
+          202,
+          181
+        ],
+        "tot": 845
+      },
+      {
+        "p": [
+          158,
+          204,
+          159,
+          194
+        ],
+        "tot": 715
+      },
+      {
+        "p": [
+          223,
+          201,
+          256,
+          202
+        ],
+        "tot": 882
+      }
+    ],
+    "tot_scratch": 3269,
+    "tot_hdp": 2387
   },
   {
     "nome": "Carovana Daniela",
@@ -5572,109 +5572,16 @@ function buildUpdatedHtml() {
 <div class="player-modal-overlay" id="playerModalOverlay" onclick="closePlayerModal(event)">
   <div class="player-modal" id="playerModal">
     <div class="modal-header">
-      <div class="modal-rank-badge" id="modalRank" style="color: var(--gold);">🥇</div>
+      <div class="modal-rank-badge" id="modalRank"></div>
       <div class="modal-player-info">
-        <div class="modal-player-name" id="modalName">Redaelli Roberto</div>
-        <div class="modal-player-meta" id="modalMeta">
-    <span class="cat-badge cat-b">M/B</span>
-    <span style="color:rgba(255,255,255,0.5);font-size:13px">Phoenix</span>
-    <span style="color:var(--neon-green);font-size:13px">+5 HDP</span>
-  </div>
+        <div class="modal-player-name" id="modalName"></div>
+        <div class="modal-player-meta" id="modalMeta"></div>
       </div>
       <button class="modal-close" onclick="closePlayerModal()">✕</button>
     </div>
     <div class="modal-body">
-      <div class="modal-totals" id="modalTotals">
-    <div class="modal-total-chip">
-      <div class="chip-val">4</div>
-      <div class="chip-lbl">Giornate</div>
-    </div>
-    <div class="modal-total-chip">
-      <div class="chip-val">3208</div>
-      <div class="chip-lbl">Tot. Scratch</div>
-    </div>
-    <div class="modal-total-chip">
-      <div class="chip-val">+80</div>
-      <div class="chip-lbl">Bonus HDP</div>
-    </div>
-    <div class="modal-total-chip highlight">
-      <div class="chip-val">3308</div>
-      <div class="chip-lbl">Tot. HDP</div>
-    </div>
-  </div>
-      <div id="modalGiornate"><div class="giornata-section">
-        <div class="giornata-title">1ª Giornata</div>
-        <div class="partite-grid"><div class="partita-box">
-          <div class="p-num">P1</div>
-          <div class="p-score">181</div>
-        </div><div class="partita-box">
-          <div class="p-num">P2</div>
-          <div class="p-score">190</div>
-        </div><div class="partita-box">
-          <div class="p-num">P3</div>
-          <div class="p-score">193</div>
-        </div><div class="partita-box">
-          <div class="p-num">P4</div>
-          <div class="p-score">206</div>
-        </div><div class="giornata-totale">
-          <div class="gt-lbl">Totale</div>
-          <div class="gt-val">790</div>
-        </div>
-      </div></div><div class="giornata-section">
-        <div class="giornata-title">2ª Giornata</div>
-        <div class="partite-grid"><div class="partita-box best-score">
-          <div class="p-num">P1</div>
-          <div class="p-score">246</div>
-        </div><div class="partita-box">
-          <div class="p-num">P2</div>
-          <div class="p-score">203</div>
-        </div><div class="partita-box">
-          <div class="p-num">P3</div>
-          <div class="p-score">200</div>
-        </div><div class="partita-box">
-          <div class="p-num">P4</div>
-          <div class="p-score">182</div>
-        </div><div class="giornata-totale">
-          <div class="gt-lbl">Totale</div>
-          <div class="gt-val">851</div>
-        </div>
-      </div></div><div class="giornata-section">
-        <div class="giornata-title">3ª Giornata</div>
-        <div class="partite-grid"><div class="partita-box">
-          <div class="p-num">P1</div>
-          <div class="p-score">218</div>
-        </div><div class="partita-box">
-          <div class="p-num">P2</div>
-          <div class="p-score">215</div>
-        </div><div class="partita-box">
-          <div class="p-num">P3</div>
-          <div class="p-score">185</div>
-        </div><div class="partita-box">
-          <div class="p-num">P4</div>
-          <div class="p-score">188</div>
-        </div><div class="giornata-totale">
-          <div class="gt-lbl">Totale</div>
-          <div class="gt-val">826</div>
-        </div>
-      </div></div><div class="giornata-section">
-        <div class="giornata-title">4ª Giornata</div>
-        <div class="partite-grid"><div class="partita-box">
-          <div class="p-num">P1</div>
-          <div class="p-score">213</div>
-        </div><div class="partita-box">
-          <div class="p-num">P2</div>
-          <div class="p-score">181</div>
-        </div><div class="partita-box">
-          <div class="p-num">P3</div>
-          <div class="p-score">217</div>
-        </div><div class="partita-box">
-          <div class="p-num">P4</div>
-          <div class="p-score">190</div>
-        </div><div class="giornata-totale">
-          <div class="gt-lbl">Totale</div>
-          <div class="gt-val">821</div>
-        </div>
-      </div></div></div>
+      <div class="modal-totals" id="modalTotals"></div>
+      <div id="modalGiornate"></div>
     </div>
   </div>
 </div>
