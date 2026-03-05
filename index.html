@@ -2050,7 +2050,7 @@ function importExcel(event) {
 </script>
 
 </head>
-<body>
+<body style="">
 <!-- ADMIN BUTTON -->
 <button class="admin-btn logged" id="adminBtn" onclick="handleAdminClick()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Admin</button>
 
@@ -2183,7 +2183,7 @@ function importExcel(event) {
     </svg>
     Importa Excel
   </button>
-  <div class="import-feedback" id="importFeedback"></div>
+  <div class="import-feedback success" id="importFeedback">✓ Importati 36 giocatori (RIEPILOGO PARTITE)</div>
 
   <button class="admin-action-btn export-btn" onclick="exportExcel()" title="Genera Excel con formattazione completa tramite Python/Pyodide (richiede connessione internet al primo utilizzo)">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -5660,16 +5660,109 @@ function buildUpdatedHtml() {
 <div class="player-modal-overlay" id="playerModalOverlay" onclick="closePlayerModal(event)">
   <div class="player-modal" id="playerModal">
     <div class="modal-header">
-      <div class="modal-rank-badge" id="modalRank"></div>
+      <div class="modal-rank-badge" id="modalRank" style="color: var(--gold);">🥇</div>
       <div class="modal-player-info">
-        <div class="modal-player-name" id="modalName"></div>
-        <div class="modal-player-meta" id="modalMeta"></div>
+        <div class="modal-player-name" id="modalName">Redaelli Roberto</div>
+        <div class="modal-player-meta" id="modalMeta">
+    <span class="cat-badge cat-b">M/B</span>
+    <span style="color:rgba(255,255,255,0.5);font-size:13px">Phoenix</span>
+    <span style="color:var(--neon-green);font-size:13px">+5 HDP</span>
+  </div>
       </div>
       <button class="modal-close" onclick="closePlayerModal()">✕</button>
     </div>
     <div class="modal-body">
-      <div class="modal-totals" id="modalTotals"></div>
-      <div id="modalGiornate"></div>
+      <div class="modal-totals" id="modalTotals">
+    <div class="modal-total-chip">
+      <div class="chip-val">4</div>
+      <div class="chip-lbl">Giornate</div>
+    </div>
+    <div class="modal-total-chip">
+      <div class="chip-val">3208</div>
+      <div class="chip-lbl">Tot. Scratch</div>
+    </div>
+    <div class="modal-total-chip">
+      <div class="chip-val">+80</div>
+      <div class="chip-lbl">Bonus HDP</div>
+    </div>
+    <div class="modal-total-chip highlight">
+      <div class="chip-val">3308</div>
+      <div class="chip-lbl">Tot. HDP</div>
+    </div>
+  </div>
+      <div id="modalGiornate"><div class="giornata-section">
+        <div class="giornata-title">1ª Giornata</div>
+        <div class="partite-grid"><div class="partita-box">
+          <div class="p-num">P1</div>
+          <div class="p-score">181</div>
+        </div><div class="partita-box">
+          <div class="p-num">P2</div>
+          <div class="p-score">190</div>
+        </div><div class="partita-box">
+          <div class="p-num">P3</div>
+          <div class="p-score">193</div>
+        </div><div class="partita-box">
+          <div class="p-num">P4</div>
+          <div class="p-score">206</div>
+        </div><div class="giornata-totale">
+          <div class="gt-lbl">Totale</div>
+          <div class="gt-val">790</div>
+        </div>
+      </div></div><div class="giornata-section">
+        <div class="giornata-title">2ª Giornata</div>
+        <div class="partite-grid"><div class="partita-box best-score">
+          <div class="p-num">P1</div>
+          <div class="p-score">246</div>
+        </div><div class="partita-box">
+          <div class="p-num">P2</div>
+          <div class="p-score">203</div>
+        </div><div class="partita-box">
+          <div class="p-num">P3</div>
+          <div class="p-score">200</div>
+        </div><div class="partita-box">
+          <div class="p-num">P4</div>
+          <div class="p-score">182</div>
+        </div><div class="giornata-totale">
+          <div class="gt-lbl">Totale</div>
+          <div class="gt-val">851</div>
+        </div>
+      </div></div><div class="giornata-section">
+        <div class="giornata-title">3ª Giornata</div>
+        <div class="partite-grid"><div class="partita-box">
+          <div class="p-num">P1</div>
+          <div class="p-score">218</div>
+        </div><div class="partita-box">
+          <div class="p-num">P2</div>
+          <div class="p-score">215</div>
+        </div><div class="partita-box">
+          <div class="p-num">P3</div>
+          <div class="p-score">185</div>
+        </div><div class="partita-box">
+          <div class="p-num">P4</div>
+          <div class="p-score">188</div>
+        </div><div class="giornata-totale">
+          <div class="gt-lbl">Totale</div>
+          <div class="gt-val">826</div>
+        </div>
+      </div></div><div class="giornata-section">
+        <div class="giornata-title">4ª Giornata</div>
+        <div class="partite-grid"><div class="partita-box">
+          <div class="p-num">P1</div>
+          <div class="p-score">213</div>
+        </div><div class="partita-box">
+          <div class="p-num">P2</div>
+          <div class="p-score">181</div>
+        </div><div class="partita-box">
+          <div class="p-num">P3</div>
+          <div class="p-score">217</div>
+        </div><div class="partita-box">
+          <div class="p-num">P4</div>
+          <div class="p-score">190</div>
+        </div><div class="giornata-totale">
+          <div class="gt-lbl">Totale</div>
+          <div class="gt-val">821</div>
+        </div>
+      </div></div></div>
     </div>
   </div>
 </div>
