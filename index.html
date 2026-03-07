@@ -2173,7 +2173,7 @@ function importExcel(event) {
     <label>Numero giornate</label>
     <div class="num-stepper">
       <button class="num-step-btn" onclick="stepNum('cfg-rounds',-1)">−</button>
-      <input type="number" id="cfg-rounds" min="1" max="10" value="5">
+      <input type="number" id="cfg-rounds" min="1" max="10" value="4">
       <button class="num-step-btn" onclick="stepNum('cfg-rounds',+1)">+</button>
     </div>
   </div>
@@ -2189,7 +2189,7 @@ function importExcel(event) {
     <label>🟡 Giocatori qualificati</label>
     <div class="num-stepper">
       <button class="num-step-btn" onclick="stepNum('cfg-qualified',-1)">−</button>
-      <input type="number" id="cfg-qualified" min="0" max="200" value="8">
+      <input type="number" id="cfg-qualified" min="0" max="200" value="0">
       <button class="num-step-btn" onclick="stepNum('cfg-qualified',+1)">+</button>
     </div>
     <div style="font-size:10px;color:rgba(255,230,0,0.5);letter-spacing:1px;margin-top:5px;">I primi N in classifica saranno evidenziati in giallo</div>
@@ -4275,6 +4275,7 @@ const players = [
 
 
 
+
 // Auto-sort: ordina sempre per tot_hdp decrescente all'avvio
 players.sort((a, b) => (b.tot_hdp || 0) - (a.tot_hdp || 0));
 
@@ -4482,9 +4483,9 @@ function stepNum(id, delta) {
 
 let tournamentConfig = {
   "maxPlayers": 36,
-  "rounds": 5,
+  "rounds": 4,
   "gamesPerRound": 4,
-  "qualifiedPlayers": 8
+  "qualifiedPlayers": 0
 };
 
 function applyTournamentConfig() {
@@ -5166,7 +5167,7 @@ document.addEventListener('keydown', e => {
 
 // ── PERSISTENZA LOCALE ──
 const STORAGE_KEY = 'bowling_merate_data';
-const DATA_VERSION = 1772897606541; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
+const DATA_VERSION = 1772902848214; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
 
 // Assicura che ogni giocatore abbia il campo giornate.
 // Se manca (dati salvati con versione precedente), cerca prima nei dati
