@@ -2534,58 +2534,6 @@ const players = [
     "tot_hdp": 3460
   },
   {
-    "nome": "Ligato Andrea",
-    "cat": "M/A",
-    "hdp": 0,
-    "hdp_tot": 0,
-    "squadra": "Cobra",
-    "g1": 924,
-    "g2": 815,
-    "g3": 839,
-    "g4": 862,
-    "g5": null,
-    "giornate": [
-      {
-        "p": [
-          205,
-          225,
-          257,
-          237
-        ],
-        "tot": 924
-      },
-      {
-        "p": [
-          180,
-          172,
-          232,
-          231
-        ],
-        "tot": 815
-      },
-      {
-        "p": [
-          246,
-          219,
-          179,
-          195
-        ],
-        "tot": 839
-      },
-      {
-        "p": [
-          210,
-          190,
-          259,
-          203
-        ],
-        "tot": 862
-      }
-    ],
-    "tot_scratch": 3440,
-    "tot_hdp": 3440
-  },
-  {
     "nome": "Alessandro Delcarmine",
     "cat": "M/A",
     "hdp": 0,
@@ -2948,6 +2896,58 @@ const players = [
     ],
     "tot_scratch": 3279,
     "tot_hdp": 3279
+  },
+  {
+    "nome": "Ligato Andrea",
+    "cat": "M/A",
+    "hdp": 0,
+    "hdp_tot": 0,
+    "squadra": "Cobra",
+    "g1": 924,
+    "g2": 815,
+    "g3": 839,
+    "g4": 862,
+    "g5": null,
+    "giornate": [
+      {
+        "p": [
+          205,
+          225,
+          257,
+          237
+        ],
+        "tot": 924
+      },
+      {
+        "p": [
+          180,
+          172,
+          232,
+          231
+        ],
+        "tot": 815
+      },
+      {
+        "p": [
+          246,
+          219,
+          179,
+          195
+        ],
+        "tot": 839
+      },
+      {
+        "p": [
+          210,
+          190,
+          259,
+          203
+        ],
+        "tot": 862
+      }
+    ],
+    "tot_scratch": 3440,
+    "tot_hdp": 3269
   },
   {
     "nome": "Galli Andrea",
@@ -4275,6 +4275,7 @@ const players = [
 
 
 
+
 // Auto-sort: ordina sempre per tot_hdp decrescente all'avvio
 players.sort((a, b) => (b.tot_hdp || 0) - (a.tot_hdp || 0));
 
@@ -5132,7 +5133,7 @@ document.addEventListener('keydown', e => {
 
 // ── PERSISTENZA LOCALE ──
 const STORAGE_KEY = 'bowling_merate_data';
-const DATA_VERSION = 1772896694341; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
+const DATA_VERSION = 1772896798654; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
 
 // Assicura che ogni giocatore abbia il campo giornate.
 // Se manca (dati salvati con versione precedente), cerca prima nei dati
