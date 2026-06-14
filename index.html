@@ -2208,7 +2208,7 @@ function importExcel(event) {
     <label>Partite per giornata</label>
     <div class="num-stepper">
       <button class="num-step-btn" onclick="stepNum('cfg-games-per-round',-1)">−</button>
-      <input type="number" id="cfg-games-per-round" min="1" max="10" value="5">
+      <input type="number" id="cfg-games-per-round" min="1" max="10" value="4">
       <button class="num-step-btn" onclick="stepNum('cfg-games-per-round',+1)">+</button>
     </div>
   </div>
@@ -4567,6 +4567,7 @@ const players = [
 
 
 
+
 // Auto-sort: ordina sempre per tot_hdp decrescente all'avvio
 players.sort((a, b) => (b.tot_hdp || 0) - (a.tot_hdp || 0));
 
@@ -4802,7 +4803,7 @@ function updateRoundsButtons() {
 let tournamentConfig = {
   "maxPlayers": 36,
   "rounds": 5,
-  "gamesPerRound": 5,
+  "gamesPerRound": 4,
   "qualifiedPlayers": 8
 };
 
@@ -5755,7 +5756,7 @@ document.addEventListener('keydown', e => {
 
 // ── PERSISTENZA LOCALE ──
 const STORAGE_KEY = 'bowling_merate_data';
-const DATA_VERSION = 1781438495307; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
+const DATA_VERSION = 1781438566308; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
 
 // Assicura che ogni giocatore abbia il campo giornate.
 // Se manca (dati salvati con versione precedente), cerca prima nei dati
