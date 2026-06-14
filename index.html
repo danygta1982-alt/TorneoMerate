@@ -4568,6 +4568,7 @@ const players = [
 
 
 
+
 // Auto-sort: ordina sempre per tot_hdp decrescente all'avvio
 players.sort((a, b) => (b.tot_hdp || 0) - (a.tot_hdp || 0));
 
@@ -5756,7 +5757,7 @@ document.addEventListener('keydown', e => {
 
 // ── PERSISTENZA LOCALE ──
 const STORAGE_KEY = 'bowling_merate_data';
-const DATA_VERSION = 1781438566308; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
+const DATA_VERSION = 1781438786740; // aggiornato da patchHtml() ad ogni pubblicazione GitHub
 
 // Assicura che ogni giocatore abbia il campo giornate.
 // Se manca (dati salvati con versione precedente), cerca prima nei dati
